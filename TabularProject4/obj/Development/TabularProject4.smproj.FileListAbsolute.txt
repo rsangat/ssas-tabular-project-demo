@@ -1,0 +1,9 @@
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\bin\Model.asdatabase
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\bin\Model.deploymenttargets
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\bin\Model.deploymentoptions
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\TabularProject4.smproj.AssemblyReference.cache
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\TabularProject4.smproj.SuggestedBindingRedirects.cache
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\TabularProject4.smproj.CoreCompileInputs.cache
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\Model.asdatabase
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\Model.deploymentoptions
+C:\Users\carki\source\repos\TabularProject4\TabularProject4\obj\Development\Model.deploymenttargets

@@ -1,0 +1,557 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer kiran master",
+        "connectionString": "Provider=SQLOLEDB;Data Source=kiran;Initial Catalog=master;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "offices",
+        "columns": [
+          {
+            "name": "office_id",
+            "dataType": "int64",
+            "sourceColumn": "office_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "office_name",
+            "dataType": "string",
+            "sourceColumn": "office_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "office_address",
+            "dataType": "string",
+            "sourceColumn": "office_address",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "phone",
+            "dataType": "string",
+            "sourceColumn": "phone",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "offices",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[offices].*   FROM [dbo].[offices] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[offices].*   FROM [dbo].[offices] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "offices"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "offices1",
+        "columns": [
+          {
+            "name": "office_id",
+            "dataType": "int64",
+            "sourceColumn": "office_id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "office_name",
+            "dataType": "string",
+            "sourceColumn": "office_name",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "office_address",
+            "dataType": "string",
+            "sourceColumn": "office_address",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "phone",
+            "dataType": "string",
+            "sourceColumn": "phone",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "offices1",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[offices1].*   FROM [dbo].[offices1] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[offices1].*   FROM [dbo].[offices1] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "offices1"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "product",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "product_name",
+            "dataType": "string",
+            "sourceColumn": "product_name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "description",
+            "dataType": "string",
+            "sourceColumn": "description",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "product_type",
+            "dataType": "string",
+            "sourceColumn": "product_type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "buying_price",
+            "dataType": "decimal",
+            "sourceColumn": "buying_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "display_price",
+            "dataType": "decimal",
+            "sourceColumn": "display_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "selling_price",
+            "dataType": "decimal",
+            "sourceColumn": "selling_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "product",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[product].*   FROM [dbo].[product] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[product].*   FROM [dbo].[product] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "product"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "product1",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "product_name",
+            "dataType": "string",
+            "sourceColumn": "product_name",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "description",
+            "dataType": "string",
+            "sourceColumn": "description",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "product_type",
+            "dataType": "string",
+            "sourceColumn": "product_type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "buying_price",
+            "dataType": "decimal",
+            "sourceColumn": "buying_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "display_price",
+            "dataType": "decimal",
+            "sourceColumn": "display_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "selling_price",
+            "dataType": "decimal",
+            "sourceColumn": "selling_price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "product1",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[product1].*   FROM [dbo].[product1] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "sum of buying_price",
+            "expression": " sum('product1'[buying_price])"
+          },
+          {
+            "name": "sum of selling_price",
+            "expression": " sum(product1[selling_price])"
+          },
+          {
+            "name": "sum of display_price",
+            "expression": " sum(product1[display_price])"
+          },
+          {
+            "name": "aver of buying_price",
+            "expression": " AVERAGE(product1[buying_price])"
+          },
+          {
+            "name": "aver of display_price",
+            "expression": " AVERAGE(product1[display_price])"
+          },
+          {
+            "name": "aver of selling_price",
+            "expression": " AVERAGE(product1[selling_price])"
+          },
+          {
+            "name": "max price of buying_price",
+            "expression": " MAX(product1[buying_price])"
+          },
+          {
+            "name": "min price of buying_price",
+            "expression": " MIN(product1[buying_price])"
+          },
+          {
+            "name": "max price of display_price",
+            "expression": " MAX(product1[display_price])"
+          },
+          {
+            "name": "min price of display_price",
+            "expression": " MIN(product1[display_price])"
+          },
+          {
+            "name": "max price of selling_price",
+            "expression": " MAX(product1[selling_price])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[product1].*   FROM [dbo].[product1] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "product1"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "student",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "fullName",
+            "dataType": "string",
+            "sourceColumn": "fullName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "price",
+            "dataType": "decimal",
+            "sourceColumn": "price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "student",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[student].*   FROM [dbo].[student] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[student].*   FROM [dbo].[student] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "student"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "student1",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "fristname",
+            "dataType": "string",
+            "sourceColumn": "fristname",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "lastname",
+            "dataType": "string",
+            "sourceColumn": "lastname",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "address",
+            "dataType": "string",
+            "sourceColumn": "address",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "phone",
+            "dataType": "string",
+            "sourceColumn": "phone",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "fee",
+            "dataType": "decimal",
+            "sourceColumn": "fee",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "student1",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[student1].*   FROM [dbo].[student1] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[student1].*   FROM [dbo].[student1] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "student1"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "teacher",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "fullname",
+            "dataType": "string",
+            "sourceColumn": "fullname",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "address",
+            "dataType": "string",
+            "sourceColumn": "address",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "phone",
+            "dataType": "string",
+            "sourceColumn": "phone",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "salary",
+            "dataType": "int64",
+            "sourceColumn": "salary",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "teacher",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[teacher].*   FROM [dbo].[teacher] ",
+              "dataSource": "SqlServer kiran master"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[teacher].*   FROM [dbo].[teacher] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "teacher"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
